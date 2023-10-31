@@ -9,7 +9,7 @@
 }
 
 h1 {
-    color: #fff;
+    color: #F4D160;
     text-align: center;
 }
 
@@ -29,7 +29,7 @@ body {
 }
 
 .square {
-    background: #FFC436;
+    background: #1D5D9B;
     border: 2px solid #999999;
     float: left;
     font-size: 3.5rem;
@@ -41,8 +41,10 @@ body {
     text-align: center;
     height: 5rem;
     width: 5rem;
+    align-items: center;
 
 }
+
 
 /* .board-row:after{
     clear: both;

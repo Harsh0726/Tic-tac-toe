@@ -1,21 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
 import Winner from './Winner';
+import catImage from '../assets/cat1.png';
+import dogImage from '../assets/dog1.png';
+import { Col, Row } from 'react-bootstrap';
 function Square({ value, onSquareClick }) {
 
-  // const [value, setValue] = useState(null);
-
-  // function handleClicked(){
-  //   setValue('X');
-  //   console.log('clicked ', {value});
-  // }
 
   return (
     <button
       className='square'
       onClick={onSquareClick}
     >
-      {value}
+      {value === 'X' ? (
+        <img src={catImage} alt="Cat" width="70" height="70" />
+      ) : value === 'O' ? (
+        <img src={dogImage} alt="Dog" width="70" height="70"  />
+      ) : null}
     </button>
   );
 }
@@ -51,14 +52,16 @@ function Board() {
   const winner = Winner(squares);
   let status;
   if (winner) {
-    status = "Game over! Winner is " + winner;
+    status = winner === "X" ? "Cat wins!" : "Dog wins!";
   } else {
-    status = "Turn of player: " + (xIsNext ? "X" : "O");
+    status = `Turn of ${xIsNext ? "Cat" : "Dog"}`;
   }
 
   return (
     <>
-      <div className='status'><h3>{status}</h3></div>
+      <div className='status'>
+        <h3>{status}</h3>
+      </div>
       <div className='board'>
         <div className='board-row'>
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
