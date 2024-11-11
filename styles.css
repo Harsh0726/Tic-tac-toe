@@ -34,14 +34,16 @@ body {
     float: left;
     font-size: 3.5rem;
     font-weight: bold;
-    /* line-height: 0px; */
     margin-right: -1px;
     margin-top: -1px;
-    padding:0;
+    padding: 0;
     text-align: center;
     height: 5rem;
     width: 5rem;
     align-items: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 
 }
 
